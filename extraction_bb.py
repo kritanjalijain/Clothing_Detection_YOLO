@@ -15,14 +15,6 @@ torch.cuda.empty_cache()
 print(device)
 
 #YOLO PARAMS
-yolo_df2_params = {   "model_def" : "yolo/df2cfg/yolov3-df2.cfg",
-"weights_path" : "yolo/weights/yolov3-df2_15000.weights",
-"class_path":"yolo/df2cfg/df2.names",
-"conf_thres" : 0.5,
-"nms_thres" :0.4,
-"img_size" : 416,
-"device" : device}
-
 yolo_modanet_params = {   "model_def" : "yolo/modanetcfg/yolov3-modanet.cfg",
 "weights_path" : "yolo/weights/yolov3-modanet_last.weights",
 "class_path":"yolo/modanetcfg/modanet.names",
