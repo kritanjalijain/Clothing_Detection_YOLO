@@ -3,6 +3,20 @@
 ### Datasets
 
 - ModaNet dataset: https://github.com/eBay/modanet
+- Categories of clothing items include:
+  - bag
+  - belt
+  - boots
+  - footwear
+  - outer
+  - dress
+  - sunglasses
+  - pants
+  - top
+  - shorts
+  - skirt
+  - headwear
+  - scarf/tie
 
 ### Model
 
