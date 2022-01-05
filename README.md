@@ -1,8 +1,6 @@
-## Clothing detection using YOLOv3 in ModaNet and DeepFashion2 datasets.
+## Clothing detection using YOLOv3 in ModaNet dataset.
 
 ### Datasets
-
-- DeepFashion2 dataset: https://github.com/switchablenorms/DeepFashion2 
 
 - ModaNet dataset: https://github.com/eBay/modanet
 
