@@ -1,14 +1,10 @@
 import torch
 import os
 import cv2
-from yolo.utils.utils import *
+import numpy as np
+import matplotlib.pyplot as plt
+#from yolo.utils.utils import *
 from predictors.YOLOv3 import YOLOv3Predictor
-
-import glob
-from tqdm import tqdm
-import sys
-import uuid
-
 
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 torch.cuda.empty_cache()
@@ -30,6 +26,14 @@ yolo_params = yolo_modanet_params
 
 
 #Classes
+def load_classes(path):
+    """
+    Loads class labels at 'path'
+    """
+    fp = open(path, "r")
+    names = fp.read().split("\n")
+    return names
+
 classes = load_classes(yolo_params["class_path"])
 
 #Colors
