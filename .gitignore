@@ -1,4 +1,5 @@
 .git
+env/
 yolo/__pycache__
 yolo/weights/yolov3-modanet_last.weights
 predictors/__pycache__
