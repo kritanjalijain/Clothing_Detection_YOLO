@@ -1,10 +1,22 @@
-## Clothing detection using YOLOv3 in ModaNet and DeepFashion2 datasets.
+## Clothing detection using YOLOv3 in ModaNet dataset.
 
 ### Datasets
 
-- DeepFashion2 dataset: https://github.com/switchablenorms/DeepFashion2 
-
 - ModaNet dataset: https://github.com/eBay/modanet
+- Categories of clothing items include:
+  - bag
+  - belt
+  - boots
+  - footwear
+  - outer
+  - dress
+  - sunglasses
+  - pants
+  - top
+  - shorts
+  - skirt
+  - headwear
+  - scarf/tie
 
 ### Model
 
@@ -16,7 +28,7 @@
 
 All weights and config files are in https://drive.google.com/file/d/1BaWJ6j5HGC136h6f4kl_eo2LNPfjgyjq/view?usp=sharing
 
-## Using
+## Usage
 
-- Use <code>new_image_demo.py</code> , and choose dataset, and model. 
+- In <code>extraction_bb.py</code> , all the categories of clothing items detected in the input picture are saved in their respective directories. 
 - Use <code>YOLOv3Predictor</code> class for YOLOv3 
