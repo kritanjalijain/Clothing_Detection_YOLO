@@ -51,7 +51,7 @@ detectron = YOLOv3Predictor(params=yolo_params)
 
 
 
-folder = '/home/kritanjali/Downloads/women_top-005/content/women_top/humans'
+folder = '/home/kritanjali/Desktop/Internship/RealW_Dataset/RealW_Multi/ritm_human'
 images=[]
 detections = []
 
@@ -97,7 +97,7 @@ for filename in os.listdir(folder):
                 img_id = path.split('/')[-1].split('.')[0]
                 print(img_id)
                 if classes[int(cls_pred)] in ['boots' , 'footwear']:
-                    parent_dir = '/home/kritanjali/Downloads/bb/women_top'
+                    parent_dir = '/home/kritanjali/Desktop/Internship/RealW_Dataset/RealW_Multi'
                     directory = 'footwear'#str(classes[int(cls_pred)])
                     shoe_dir_path = os.path.join(parent_dir, directory)
                     try: 
@@ -107,7 +107,7 @@ for filename in os.listdir(folder):
                     crop_path = shoe_dir_path + "/" + str(img_id) + '.png' 
 
                 elif classes[int(cls_pred)] in ['pants', 'shorts','skirt' ]:
-                    parent_dir = '/home/kritanjali/Downloads/bb/women_top'
+                    parent_dir = '/home/kritanjali/Desktop/Internship/RealW_Dataset/RealW_Multi'
                     directory = 'bottomwear'#str(classes[int(cls_pred)])
                     bottom_dir_path = os.path.join(parent_dir, directory)
                     try: 
@@ -118,7 +118,7 @@ for filename in os.listdir(folder):
                     #crop_path = "output/cropped/bottomwear/" + str(img_id) + str(classes[int(cls_pred)])+ '.jpg' 
 
                 elif classes[int(cls_pred)] in ['top', 'outer']:
-                    parent_dir = '/home/kritanjali/Downloads/bb/women_top'
+                    parent_dir = '/home/kritanjali/Desktop/Internship/RealW_Dataset/RealW_Multi' 
                     directory = 'topwear'#str(classes[int(cls_pred)])
                     top_dir_path = os.path.join(parent_dir, directory)
                     try: 
@@ -129,7 +129,7 @@ for filename in os.listdir(folder):
                     #crop_path = "output/cropped/upper/" + str(img_id) + str(classes[int(cls_pred)])+ '.jpg' 
                 
                 else:
-                    parent_dir = '/home/kritanjali/Downloads/bb/women_top'
+                    parent_dir = '/home/kritanjali/Desktop/Internship/RealW_Dataset/RealW_Multi'
                     directory = str(classes[int(cls_pred)])
                     new_dir_path = os.path.join(parent_dir, directory) 
                     try: 

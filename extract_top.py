@@ -51,7 +51,7 @@ detectron = YOLOv3Predictor(params=yolo_params)
 
 
 
-folder = '/home/kritanjali/Desktop/Internship/IIT-Bombay-Internship/women_pant/humans'#'/home/kritanjali/Downloads/men_top-004/content/men_top/humans' 
+folder = '/home/kritanjali/Desktop/Internship/Scrapped_Dataset/women_dress/content/women_dress/humans'#'/home/kritanjali/Downloads/men_top-004/content/men_top/humans' 
 images=[]
 detections = []
 
@@ -96,19 +96,19 @@ for filename in os.listdir(folder):
                 #print(img_crop)
                 img_id = path.split('/')[-1].split('.')[0]
                 print(img_id)
-                if classes[int(cls_pred)] in ['pants']:#['top', 'outer']:
-                    parent_dir = '/home/kritanjali/Desktop/Internship/IIT-Bombay-Internship/women_pant'
+                if classes[int(cls_pred)] in ['dress', 'outer']:#['top', 'outer']:
+                    parent_dir = '/home/kritanjali/Desktop/Internship/Scrapped_Dataset/women_dress/content/women_dress'
                     directory = 'cropped'#str(classes[int(cls_pred)])
                     pants_dir_path = os.path.join(parent_dir, directory)
                     try: 
                         os.mkdir(pants_dir_path) 
                     except OSError as error: 
                         print(error)
-                    crop_path = pants_dir_path + "/" + "w"+ str(img_id) + '.png'
+                    crop_path = pants_dir_path + "/" + "dress"+ str(img_id) + '.png'
                     #crop_path = "output/cropped/upper/" + str(img_id) + str(classes[int(cls_pred)])+ '.jpg' 
                     if((x1 > 0) & (x2 > 0) & (y1 > 0) & (y2 > 0)):
                         cv2.imwrite(crop_path,img_crop)
-                    cv2.rectangle(img,(x1,y1) , (x2,y2) , color,3)
+                    cv2.rectangle(img.copy(),(x1,y1) , (x2,y2) , color,3)
                     y1 = 0 if y1<0 else y1
                     y1_rect = y1-25
                     y1_text = y1-5
@@ -117,8 +117,8 @@ for filename in os.listdir(folder):
                         y1_rect = y1+27
                         y1_text = y1+20
                         break
-                    cv2.rectangle(img,(x1-2,y1_rect) , (x1 + int(8.5*len(text)),y1) , color,-1)
-                    cv2.putText(img,text,(x1,y1_text), font, 0.5,(255,255,255),1,cv2.LINE_AA)
+                    #cv2.rectangle(img,(x1-2,y1_rect) , (x1 + int(8.5*len(text)),y1) , color,-1)
+                    #cv2.putText(img,text,(x1,y1_text), font, 0.5,(255,255,255),1,cv2.LINE_AA)
                 else:
                     print('idc abt this class')
                 
