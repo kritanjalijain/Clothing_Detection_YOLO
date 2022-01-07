@@ -47,7 +47,7 @@ detectron = YOLOv3Predictor(params=yolo_params)
 
 
 
-folder = '/home/kritanjali/Desktop/Internship/RealW_Dataset/RealW_Multi/ritm_human'
+folder = "tests"
 images=[]
 detections = []
 
@@ -66,7 +66,7 @@ for filename in os.listdir(folder):
     #print(detections)
     #print(type(detections))
     #print(type(images))
-
+    count = 1
 
     if len(detections) != 0 :
         detections.sort(reverse=False ,key = lambda x:x[4])
@@ -92,40 +92,44 @@ for filename in os.listdir(folder):
                 #print(img_crop)
                 img_id = path.split('/')[-1].split('.')[0]
                 print(img_id)
+                parent_dir = 'output/cropped'
+                
                 if classes[int(cls_pred)] in ['boots' , 'footwear']:
-                    parent_dir = '/home/kritanjali/Desktop/Internship/RealW_Dataset/RealW_Multi'
+                    
                     directory = 'footwear'#str(classes[int(cls_pred)])
                     shoe_dir_path = os.path.join(parent_dir, directory)
+                    
                     try: 
                         os.mkdir(shoe_dir_path) 
                     except OSError as error: 
                         print(error)
-                    crop_path = shoe_dir_path + "/" + str(img_id) + '.png' 
+                    crop_path = shoe_dir_path + "/" + str(img_id) + str(classes[int(cls_pred)])+ str(count)+'.png'
+                    count = count+1 
 
                 elif classes[int(cls_pred)] in ['pants', 'shorts','skirt' ]:
-                    parent_dir = '/home/kritanjali/Desktop/Internship/RealW_Dataset/RealW_Multi'
+                    
                     directory = 'bottomwear'#str(classes[int(cls_pred)])
                     bottom_dir_path = os.path.join(parent_dir, directory)
                     try: 
                         os.mkdir(bottom_dir_path) 
                     except OSError as error: 
                         print(error)
-                    crop_path = bottom_dir_path + "/" + str(img_id) + '.png' 
-                    #crop_path = "output/cropped/bottomwear/" + str(img_id) + str(classes[int(cls_pred)])+ '.jpg' 
+                    crop_path = bottom_dir_path + "/" + str(img_id) + str(classes[int(cls_pred)]) + '.png' 
+                     
 
                 elif classes[int(cls_pred)] in ['top', 'outer']:
-                    parent_dir = '/home/kritanjali/Desktop/Internship/RealW_Dataset/RealW_Multi' 
+                     
                     directory = 'topwear'#str(classes[int(cls_pred)])
                     top_dir_path = os.path.join(parent_dir, directory)
                     try: 
                         os.mkdir(top_dir_path) 
                     except OSError as error: 
                         print(error)
-                    crop_path = top_dir_path + "/" + str(img_id) + '.png' 
-                    #crop_path = "output/cropped/upper/" + str(img_id) + str(classes[int(cls_pred)])+ '.jpg' 
+                    crop_path = top_dir_path + "/" + str(img_id) + str(classes[int(cls_pred)])+ '.png' 
+                     
                 
                 else:
-                    parent_dir = '/home/kritanjali/Desktop/Internship/RealW_Dataset/RealW_Multi'
+                    
                     directory = str(classes[int(cls_pred)])
                     new_dir_path = os.path.join(parent_dir, directory) 
                     try: 

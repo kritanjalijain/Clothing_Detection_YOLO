@@ -85,7 +85,7 @@ while(True):
                 #print(img_crop)
                 img_id = path.split('/')[-1].split('.')[0]
                 if classes[int(cls_pred)] in ['top', 'outer']:
-                    crop_path = "output/cropped/upper/" + str(img_id) + str(classes[int(cls_pred)])+ '.jpg' 
+                    crop_path = "output/cropped/topwear/" + str(img_id) + str(classes[int(cls_pred)])+ '.jpg' 
                     if((x1 > 0) & (x2 > 0) & (y1 > 0) & (y2 > 0)):
                         cv2.imwrite(crop_path,img_crop)
                     cv2.rectangle(img.copy(),(x1,y1) , (x2,y2) , color,3) #copy of image or else other bb are visible
