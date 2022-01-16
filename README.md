@@ -2,7 +2,7 @@
 
 Outfit item detection implemented using YOLOv3 object detection model trained on Modanet clothing dataset.
 
-[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://github.com/kritanjalijain/Clothing_Detection_YOLO/blob/main/YOLOv3.ipynb)
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/kritanjalijain/Clothing_Detection_YOLO/blob/main/YOLOv3.ipynb)
 
 ## Project Description
 
