@@ -2,6 +2,8 @@
 
 Outfit item detection implemented using YOLOv3 object detection model trained on Modanet clothing dataset.
 
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://github.com/kritanjalijain/Clothing_Detection_YOLO/blob/main/YOLOv3.ipynb)
+
 ## Project Description
 
 Given an input image, the model detects one or more clothing item(s) categories and draws bounding boxes along with their prediction confidence score. Then it crops the items within the bounding boxes and saves them in the respective category directory. 
